@@ -490,11 +490,12 @@
 
         .logo-background {
             position: absolute;
-            width: calc(350px + 20px);
-            height: calc(350px + 20px);
-            background: transparent;
+            width: calc(320px + 30px);
+            height: calc(320px + 30px);
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             z-index: 1;
             top: 50%;
             left: 50%;
@@ -504,25 +505,25 @@
         @keyframes logoFloat {
             0%, 100% { 
                 transform: translateY(0px) scale(1);
-                filter: drop-shadow(0 15px 40px rgba(0,0,0,0.2));
+                filter: drop-shadow(0 8px 25px rgba(0,0,0,0.15));
             }
             50% { 
-                transform: translateY(-8px) scale(1);
-                filter: drop-shadow(0 25px 50px rgba(0,0,0,0.25));
+                transform: translateY(-6px) scale(1.02);
+                filter: drop-shadow(0 15px 35px rgba(0,0,0,0.25));
             }
         }
 
         .logo-image {
-            width: 350px;
-            height: 350px;
+            width: 320px;
+            height: 320px;
             object-fit: contain;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 100%;
+            border-radius: 0;
             position: absolute;
             z-index: 2;
-            filter: drop-shadow(0 15px 40px rgba(0,0,0,0));
-            max-width: 70vw;
-            max-height: 70vw;
+            filter: drop-shadow(0 8px 25px rgba(0,0,0,0.15));
+            max-width: 65vw;
+            max-height: 65vw;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
