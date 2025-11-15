@@ -24,7 +24,7 @@ STEMSeeds is a student-led nonprofit providing STEM tutoring and hands-on learni
 
 *Making STEM education accessible, one seed at a time.*
 
-Visit us at: [stemseeds-nj.github.io](https://stemseeds-nj.github.io)
+Visit us at: [stemseeds.org](https://stemseeds.org)
 
 - **Animations**: CSS animations with cubic-bezier easing
 - **SEO**: JSON-LD structured data, optimized meta tags
