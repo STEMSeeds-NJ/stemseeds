@@ -490,24 +490,27 @@
 
         .logo-background {
             position: absolute;
-            width: calc(320px + 30px);
-            height: calc(320px + 30px);
+            width: calc(320px + 40px);
+            height: calc(320px + 40px);
             background: radial-gradient(circle, 
-                rgba(139, 195, 74, 0.15) 0%,
-                rgba(139, 195, 74, 0.1) 30%, 
-                rgba(255,255,255, 0.05) 70%,
+                rgba(76, 175, 80, 0.2) 0%,
+                rgba(139, 195, 74, 0.15) 25%, 
+                rgba(165, 214, 167, 0.1) 50%,
+                rgba(200, 230, 201, 0.05) 75%,
                 transparent 100%);
             border-radius: 50%;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             box-shadow: 
-                0 0 30px rgba(139, 195, 74, 0.3),
-                0 10px 30px rgba(0,0,0,0.15),
-                inset 0 1px 0 rgba(255,255,255,0.1);
+                0 0 40px rgba(76, 175, 80, 0.25),
+                0 0 80px rgba(139, 195, 74, 0.15),
+                0 15px 35px rgba(0,0,0,0.1),
+                inset 0 2px 4px rgba(255,255,255,0.15),
+                inset 0 -2px 4px rgba(76, 175, 80, 0.1);
             z-index: 1;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            border: 1px solid rgba(139, 195, 74, 0.2);
+            border: 2px solid rgba(139, 195, 74, 0.3);
         }
 
         @keyframes logoFloat {
