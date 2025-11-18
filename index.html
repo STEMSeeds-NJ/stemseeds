@@ -3,8 +3,8 @@
 <head>
     <meta name="google-site-verification" content="RoIO1djC0yeHBtE1toMGndnlgyXvEGvWYxdgmQZ_UGg" />
     <!-- Title & Meta Description -->
-    <title>STEMSeeds | STEM Education in New Jersey</title>
-    <meta name="description" content="Join STEMSeeds - a student-led nonprofit founded by 3 high school students in NJ. Get STEM tutoring, hands-on science experiments, coding classes & math help. Peer-to-peer learning that works!">
+    <title>STEMSeeds — STEM Education New Jersey</title>
+    <meta name="description" content="STEMSeeds is a student-led nonprofit providing STEM tutoring and hands-on learning experiences for high school students across New Jersey.">
     
     <!-- Basic Meta Tags --> 
     <meta charset="UTF-8">
@@ -100,6 +100,22 @@
             "https://www.tiktok.com/@stemseeds.nj",
             "https://linkedin.com/company/stemseedsnj"
         ]
+    }
+    </script>
+    <!-- JSON-LD Structured Data for EducationalOrganization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "STEMSeeds",
+      "url": "https://stemseeds.org/",
+      "logo": "https://stemseeds.org/images/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Jersey",
+        "addressRegion": "NJ",
+        "addressCountry": "US"
+      }
     }
     </script>
     <style>
@@ -1935,6 +1951,14 @@
         ↑
     </button>
     <script>
+        // Redirect /index.html to /
+  if (window.location.pathname.match(/\/index\.html$/i)) {
+    var search = window.location.search || '';
+    var hash = window.location.hash || '';
+    window.location.replace(window.location.origin + '/' + search + hash);
+  }
+    </script>
+    <script>
         // ==========================================
         // ANIMATION STATE MANAGEMENT
         // ==========================================
@@ -2204,12 +2228,11 @@
 
         document.addEventListener('click', (e) => {
             const colors = getBlueColors();
-            
             const pulse = document.createElement('div');
             pulse.style.cssText = `
                 position: fixed;
-                left: ${e.clientX - 12}px;
-                top: ${e.clientY - 12}px;
+                left: ${(e.clientX - 12) + 'px'};
+                top: ${(e.clientY - 12) + 'px'};
                 width: 24px;
                 height: 24px;
                 background: radial-gradient(circle, ${colors.primary}, transparent 70%);
@@ -2253,8 +2276,8 @@
                     const pulse = document.createElement('div');
                     pulse.style.cssText = `
                         position: fixed;
-                        left: ${touch.clientX - 14}px;
-                        top: ${touch.clientY - 14}px;
+                        left: ${(touch.clientX - 14) + 'px'};
+                        top: ${(touch.clientY - 14) + 'px'};
                         width: 28px;
                         height: 28px;
                         background: radial-gradient(circle, ${colors.primary}, transparent 70%);
@@ -2265,7 +2288,6 @@
                         animation: instantPulse 0.15s ease-out forwards;
                     `;
                     document.body.appendChild(pulse);
-                    
                     setTimeout(() => {
                         if (pulse && pulse.parentNode) {
                             pulse.remove();
