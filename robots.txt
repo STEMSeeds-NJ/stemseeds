@@ -1,12 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemap
 Sitemap: https://stemseeds.org/sitemap.xml
-
-# Block access to admin or sensitive areas (if any in the future)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Allow all search engines to crawl the site
-# This helps with SEO for STEMSeeds nonprofit visibility
