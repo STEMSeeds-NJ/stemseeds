@@ -1,51 +1,125 @@
-# STEMSeeds
+# 🌱 STEMSeeds
 
-**STEM Education for New Jersey Students** 🌱
+**Student-led STEM Education in New Jersey**
 
-## About
+[![Website](https://img.shields.io/badge/website-stemseeds.org-green)](https://stemseeds.org)
 
-STEMSeeds is a student-led nonprofit providing STEM tutoring and hands-on learning experiences for high school students across New Jersey. Founded by three passionate high school students, we believe in making quality STEM education accessible to everyone.
 
-## What We Offer
-
-- **1-on-1 Tutoring** in Math, Science, and Technology
-- **Interactive Workshops** with hands-on experiments
-- **Peer-to-Peer Learning** connecting students with student mentors
-- **Parent Portal** for easy session booking and progress tracking
-- **Volunteer Opportunities** for students to give back
-
-## Get Started
-
-- **Students**: Sign up for tutoring sessions
-- **Parents**: Book sessions through our parent portal
-- **Volunteers**: Join our team of student tutors
+> Planting the seeds for the future through STEM education
 
 ---
 
-*Making STEM education accessible, one seed at a time.*
+## 📖 About
 
-Visit us at: [stemseeds.org](https://stemseeds.org)
+STEMSeeds is a **student-led nonprofit** founded by three passionate high school students dedicated to making STEM education accessible, engaging, and hands-on for students across New Jersey. We believe in the power of peer-to-peer learning and interactive experiences to spark curiosity and inspire the next generation of scientists, engineers, and innovators.
 
-- **Animations**: CSS animations with cubic-bezier easing
-- **SEO**: JSON-LD structured data, optimized meta tags
-- **Hosting**: GitHub Pages
-- **Domain**: Planning to acquire custom domain
+**Our Mission:** To empower young learners by making STEM education approachable, youth-oriented, and accessible for all through student-led teaching and community involvement.
 
-## 📈 SEO Features
+---
 
-- Comprehensive meta tags and Open Graph
-- JSON-LD structured data for nonprofits
-- Optimized for local New Jersey searches
-- Sitemap and robots.txt included
-- Mobile-first responsive design
+## ✨ What We Offer
 
-## 🌱 Growing the Future
+- 🎓 **1-on-1 Tutoring** - Personalized Math, Science, and Technology tutoring
+- 🔬 **Interactive Workshops** - Hands-on experiments and STEM activities
+- 👥 **Peer-to-Peer Learning** - Student mentors connecting with students
+- 📱 **Parent Portal** - Easy session booking and progress tracking
+- 🤝 **Volunteer Opportunities** - Join our team of student educators
+
+---
+
+## 🚀 Get Started
+
+### For Students
+
+Sign up for tutoring sessions and join our interactive workshops
+
+### For Parents
+
+Book sessions through our parent portal and track your child's progress
+
+### For Volunteers
+
+Join our team of student tutors and make a difference in your community
+
+**Visit us at [stemseeds.org](https://stemseeds.org)**
+
+---
+
+## 👥 Our Team
+
+Founded by three dedicated high school students:
+
+- **Nandish Panchal** - Chief Technology Officer
+- **Mahi Patel** - Chief Marketing Officer
+- **Dviti Soni** - Chief Financial Officer
+
+---
+
+## 📍 Location
+
+**14 Liberty Way**  
+Monroe Township, NJ 08831
+
+---
+
+## 🛠️ Technical Stack
+
+### Frontend
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern animations with cubic-bezier easing
+- **JavaScript** - Interactive features and smooth scrolling
+
+### SEO & Performance
+
+- ✅ JSON-LD structured data for nonprofits
+- ✅ Comprehensive meta tags (Open Graph, Twitter Cards)
+- ✅ Optimized for local New Jersey searches
+- ✅ Mobile-first responsive design
+- ✅ PWA-ready with web manifest
+- ✅ Performance optimizations (DNS prefetch, preconnect)
+- ✅ Google Search Console verified
+
+### Hosting & Domain
+
+- **Hosting:** GitHub Pages
+- **Domain:** stemseeds.org
+- **SSL:** Enabled (HTTPS)
+
+---
+
+## � SEO Features
+
+- 🎯 Local SEO optimized for Monroe Township, NJ
+- 📱 Mobile-optimized with theme-color meta tag
+- 🗺️ Google Maps integration ready
+- 🔍 Rich snippets with structured data
+- 📈 Sitemap and robots.txt configured
+- ⚡ Fast loading with performance hints
+
+---
+
+## 🌐 Connect With Us
+
+- 📸 [Instagram](https://instagram.com/stemseeds.nj)
+- 🎵 [TikTok](https://www.tiktok.com/@stemseeds.nj)
+- 💼 [LinkedIn](https://linkedin.com/company/stemseedsnj)
+- 💻 [GitHub](https://github.com/STEMSeeds-NJ/stemseeds)
+
+---
+
+## 📄 License
+
+Copyright © 2025 STEMSeeds. All rights reserved.
+
+---
+
+## � Our Impact
 
 STEMSeeds is more than just an organization—we're planting seeds for the future of STEM education. Every student we reach, every concept we make clear, every spark of curiosity we ignite contributes to a more innovative and scientifically literate world.
 
-**Join us in growing the future, one seed at a time! 🌟**
+**Join us in growing the future, one seed at a time!** �✨
 
 ---
 
-*© 2025 STEMSeeds. All rights reserved. | Planting seeds for the future through STEM education*# stemseeds
-# stemseeds
+_Making STEM education accessible, engaging, and fun for all students._
