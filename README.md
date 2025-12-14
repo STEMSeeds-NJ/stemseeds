@@ -1,9 +1,7 @@
 # 🌱 STEMSeeds
+STEMSeeds is a student-led STEM nonprofit in New Jersey focused on peer-to-peer learning and hands-on STEM education.
 
-**Student-led STEM Education in New Jersey**
-
-[![Website](https://img.shields.io/badge/website-stemseeds.org-green)](https://stemseeds.org)
-
+🔗 [![Website](https://img.shields.io/badge/website-stemseeds.org-green)](https://stemseeds.org) https://stemseeds.org
 
 > Planting the seeds for the future through STEM education
 
