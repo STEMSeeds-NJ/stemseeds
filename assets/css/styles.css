@@ -109,11 +109,11 @@ h1, h2, h3 { line-height: 1.2; }
 .step-card::before { position: absolute; top: 1.25rem; left: 1.5rem; display: grid; place-items: center; width: 2rem; height: 2rem; content: counter(steps); counter-increment: steps; color: var(--white); background: var(--green); border-radius: 50%; font-weight: 700; }
 .step-card h3 { margin-top: 0; color: var(--green-dark); }
 .programs-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
-.program-card { text-align: center; }
+.program-card { display: flex; flex-direction: column; align-items: center; text-align: center; }
 .program-card .icon { font-size: 2rem; }
 .program-card h3 { margin: .65rem 0 .4rem; color: var(--green-dark); }
 .program-card p { margin: 0; color: var(--muted); font-size: .95rem; }
-.program-card .button { margin-top: 1rem; font-size: .9rem; }
+.program-card .button { margin-top: auto; padding-top: .75rem; font-size: .9rem; }
 .partner-card { text-align: center; }
 .partner-card p { max-width: 700px; margin: 0 auto 1rem; color: var(--muted); }
 .faq-list { display: grid; gap: .8rem; max-width: 850px; margin: 0 auto; }
