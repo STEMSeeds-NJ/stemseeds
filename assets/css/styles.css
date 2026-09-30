@@ -23,8 +23,10 @@ body {
   color: var(--text);
   background: radial-gradient(circle at 15% 10%, rgba(255,255,255,.48), transparent 28%), linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
   overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
 }
-img { max-width: 100%; height: auto; }
+img { max-width: 100%; height: auto; -webkit-user-drag: none; }
 a { color: var(--green); }
 a:focus-visible, button:focus-visible, summary:focus-visible {
   outline: 3px solid #ffca28;
@@ -92,10 +94,10 @@ h1, h2, h3 { line-height: 1.2; }
 .button-primary { color: var(--green-dark); background: #c8e6c9; }
 .button-secondary { color: var(--white); border-color: rgba(255,255,255,.7); background: transparent; }
 .pathway-card .button-secondary { color: var(--green-dark); border-color: rgba(46,125,50,.35); background: var(--green-light); }
-.social-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.25rem; }
-.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; color: var(--white); background: rgba(255,255,255,.1); transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
+.social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; margin-top: 1.25rem; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 3.75rem; height: 3.75rem; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: var(--white); background: rgba(255,255,255,.1); transition: transform .25s ease, box-shadow .25s ease, background .25s ease; }
 .social-links a:hover, .social-links a:focus-visible { transform: translateY(-4px) scale(1.06); box-shadow: 0 10px 24px rgba(0,0,0,.2); }
-.social-links svg, .social-icon svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+.social-links svg, .social-icon svg { width: 1.65rem; height: 1.65rem; fill: currentColor; }
 .social-links .instagram:hover, .social-links .instagram:focus-visible { color: #fff; background: linear-gradient(135deg, #833ab4, #fd1d1d 55%, #fcb045); }
 .social-links .tiktok:hover, .social-links .tiktok:focus-visible { color: #111; background: linear-gradient(135deg, #69c9d0, #fff 48%, #ee1d52); }
 .social-links .linkedin:hover, .social-links .linkedin:focus-visible { color: #fff; background: #0a66c2; }
@@ -154,8 +156,10 @@ h1, h2, h3 { line-height: 1.2; }
 .site-footer h2, .site-footer h3 { margin-top: 0; color: var(--white); }
 .site-footer a { color: #c8e6c9; }
 .footer-links { display: grid; gap: .35rem; }
-.footer-links .social-icon { display: inline-flex; align-items: center; gap: .5rem; width: fit-content; }
-.footer-links .social-icon svg { width: 1.15rem; height: 1.15rem; fill: currentColor; transition: transform .2s ease, color .2s ease; }
+.site-footer .footer-grid > div:last-child { text-align: center; }
+.site-footer .footer-links:has(.social-icon) { display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; }
+.footer-links .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 3.75rem; height: 3.75rem; border: 1px solid rgba(255,255,255,.5); border-radius: 50%; color: var(--white); background: rgba(255,255,255,.08); }
+.footer-links .social-icon svg { width: 1.65rem; height: 1.65rem; fill: currentColor; transition: transform .2s ease, color .2s ease; }
 .footer-links .social-icon:hover svg, .footer-links .social-icon:focus-visible svg { color: var(--white); transform: scale(1.15); }
 .footer-bottom { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.2); font-size: .9rem; }
 .scroll-to-top { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 900; width: 3rem; height: 3rem; border: 0; border-radius: 50%; color: var(--white); background: var(--green-mid); box-shadow: 0 4px 16px rgba(0,0,0,.2); font-size: 1.5rem; opacity: 0; pointer-events: none; transform: translateY(1rem); transition: opacity .2s ease, transform .2s ease; }
