@@ -6,6 +6,16 @@
   const mobileNav = document.querySelector('.mobile-nav');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  document.querySelectorAll('.site-footer .footer-links').forEach((footerLinks) => {
+    const emailLink = footerLinks.querySelector('a[href^="mailto:"]');
+    emailLink?.classList.add('footer-email');
+    if (emailLink) {
+      emailLink.textContent = 'Email Us';
+      emailLink.setAttribute('aria-label', 'Email Us');
+    }
+    footerLinks.querySelectorAll('a[href*="github.com"]').forEach((link) => link.remove());
+  });
+
   document.querySelectorAll('.hero-copy > *, .hero-art, .section-heading, .about-grid > *, .pathway-card, .program-card, .step-card, .team-card, .partner-card, .faq-item, .social-links a, .form-section').forEach((element, index) => {
     element.dataset.reveal = '';
     element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
