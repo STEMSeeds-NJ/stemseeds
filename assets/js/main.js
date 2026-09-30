@@ -6,6 +6,24 @@
   const mobileNav = document.querySelector('.mobile-nav');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  document.querySelectorAll('.hero-copy > *, .hero-art, .section-heading, .about-grid > *, .pathway-card, .program-card, .step-card, .team-card, .partner-card, .faq-item, .social-links a, .form-section').forEach((element, index) => {
+    element.dataset.reveal = '';
+    element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
+  });
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+    document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
+  }
+
   const updateScrollState = () => {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
@@ -55,6 +73,12 @@
       cursor.style.top = `${event.clientY}px`;
       cursor.classList.add('visible');
     }, { passive: true });
+    document.addEventListener('pointerover', (event) => {
+      if (event.target.closest('a, button, summary')) cursor.classList.add('interactive');
+    });
+    document.addEventListener('pointerout', (event) => {
+      if (event.target.closest('a, button, summary')) cursor.classList.remove('interactive');
+    });
     document.addEventListener('pointerleave', () => cursor.classList.remove('visible'));
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Tab') cursor.classList.remove('visible');
