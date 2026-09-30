@@ -21,6 +21,24 @@
     element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 70}ms`);
   });
 
+  document.querySelectorAll('.faq-item').forEach((item) => {
+    const answer = item.querySelector('.faq-answer');
+    if (!answer) return;
+    const setAnswerHeight = () => {
+      answer.style.height = item.open ? `${answer.scrollHeight}px` : '0px';
+    };
+    if (item.open) setAnswerHeight();
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        answer.style.height = '0px';
+        requestAnimationFrame(setAnswerHeight);
+      } else {
+        answer.style.height = `${answer.scrollHeight}px`;
+        requestAnimationFrame(() => { answer.style.height = '0px'; });
+      }
+    });
+  });
+
   if (reduceMotion || !('IntersectionObserver' in window)) {
     document.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
   } else {
