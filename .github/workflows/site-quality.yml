@@ -45,8 +45,8 @@ jobs:
         run: npx --yes http-server@14 . -p 8080 > /tmp/stemseeds-server.log 2>&1 &
       - name: Run accessibility audit
         run: |
-          npx --yes pa11y@9 http://127.0.0.1:8080/index.html --runner axe --standard WCAG2AA --threshold 20
-          npx --yes pa11y@9 http://127.0.0.1:8080/forms.html --runner axe --standard WCAG2AA --threshold 20
+          npx --yes pa11y@9 http://127.0.0.1:8080/index.html --runner axe --standard WCAG2AA --threshold 20 --chrome-launch-config '{"args":["--no-sandbox","--disable-setuid-sandbox"]}'
+          npx --yes pa11y@9 http://127.0.0.1:8080/forms.html --runner axe --standard WCAG2AA --threshold 20 --chrome-launch-config '{"args":["--no-sandbox","--disable-setuid-sandbox"]}'
 
   lighthouse:
     runs-on: ubuntu-latest
