@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEMSeeds | STEM Education in New Jersey</title>
-  <meta name="description" content="STEMSeeds provides student-led STEM tutoring and hands-on science, technology, engineering, and math learning in New Jersey.">
+  <title>STEM Tutoring &amp; Hands-On Learning in New Jersey | STEMSeeds</title>
+  <meta name="description" content="STEMSeeds offers student-led STEM tutoring and hands-on science, technology, engineering, and math learning in New Jersey.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="STEMSeeds Team">
   <meta name="application-name" content="STEMSeeds">
@@ -23,6 +23,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://stemseeds.org/">
   <meta property="og:image" content="https://stemseeds.org/logo.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:alt" content="STEMSeeds logo">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
@@ -37,34 +40,45 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "STEMSeeds",
-    "alternateName": "STEM Seeds",
-    "url": "https://stemseeds.org/",
-    "logo": "https://stemseeds.org/logo.png",
-    "image": "https://stemseeds.org/logo.png",
-    "description": "A student-led STEM education initiative in New Jersey focused on approachable, hands-on learning.",
-    "email": "admin@stemseeds.org",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "contactType": "general inquiries",
-      "email": "admin@stemseeds.org",
-      "areaServed": "US"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "NJ",
-      "addressCountry": "US"
-    },
-    "areaServed": {
-      "@type": "State",
-      "name": "New Jersey"
-    },
-    "sameAs": [
-      "https://instagram.com/stemseeds.nj",
-      "https://www.tiktok.com/@stemseeds.nj",
-      "https://linkedin.com/company/stemseedsnj",
-      "https://github.com/STEMSeeds-NJ/stemseeds"
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://stemseeds.org/#organization",
+        "name": "STEMSeeds",
+        "alternateName": "STEM Seeds",
+        "url": "https://stemseeds.org/",
+        "logo": "https://stemseeds.org/logo.png",
+        "image": "https://stemseeds.org/logo.png",
+        "description": "A student-led STEM education initiative in New Jersey focused on approachable, hands-on learning.",
+        "email": "admin@stemseeds.org",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "general inquiries",
+          "email": "admin@stemseeds.org"
+        },
+        "sameAs": [
+          "https://instagram.com/stemseeds.nj",
+          "https://www.tiktok.com/@stemseeds.nj",
+          "https://linkedin.com/company/stemseedsnj",
+          "https://github.com/STEMSeeds-NJ/stemseeds"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://stemseeds.org/#website",
+        "url": "https://stemseeds.org/",
+        "name": "STEMSeeds",
+        "publisher": { "@id": "https://stemseeds.org/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://stemseeds.org/#webpage",
+        "url": "https://stemseeds.org/",
+        "name": "STEM Tutoring & Hands-On Learning in New Jersey | STEMSeeds",
+        "isPartOf": { "@id": "https://stemseeds.org/#website" },
+        "about": { "@id": "https://stemseeds.org/#organization" },
+        "description": "STEMSeeds offers student-led STEM tutoring and hands-on science, technology, engineering, and math learning in New Jersey."
+      }
     ]
   }
   </script>
@@ -101,7 +115,7 @@
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-art">
-          <img class="hero-logo" src="logo.png" alt="STEMSeeds logo" width="360" height="360">
+          <img class="hero-logo" src="logo.png" alt="STEMSeeds logo" width="360" height="360" fetchpriority="high">
         </div>
         <div class="hero-copy">
           <p class="eyebrow">Student-led STEM education in New Jersey</p>
@@ -194,9 +208,9 @@
       <div class="container">
         <div class="section-heading"><h2 id="team-title">Meet the founders</h2><p>STEMSeeds is guided by students who care about making STEM approachable.</p></div>
         <div class="team-grid">
-          <article class="team-card"><img src="images/1.jpg" alt="Nandish Panchal" loading="lazy" width="160" height="160"><h3>Nandish Panchal</h3><p class="role">President · Chief Technology Officer</p><p>Leads technology and systems while creating approachable ways for learners to explore STEM.</p></article>
-          <article class="team-card"><img src="images/2.jpeg" alt="Mahi Patel" loading="lazy" width="160" height="160"><h3>Mahi Patel</h3><p class="role">Secretary · Chief Marketing Officer</p><p>Leads outreach, communication, and community connections that help STEMSeeds reach learners.</p></article>
-          <article class="team-card"><img src="images/3.jpeg" alt="Dviti Soni" loading="lazy" width="160" height="160"><h3>Dviti Soni</h3><p class="role">Treasurer · Chief Financial Officer</p><p>Supports thoughtful planning and operations so learning opportunities can continue to grow.</p></article>
+          <article class="team-card"><img src="images/1.jpg" alt="Nandish Panchal" loading="lazy" decoding="async" width="160" height="160"><h3>Nandish Panchal</h3><p class="role">President · Chief Technology Officer</p><p>Leads technology and systems while creating approachable ways for learners to explore STEM.</p></article>
+          <article class="team-card"><img src="images/2.jpeg" alt="Mahi Patel" loading="lazy" decoding="async" width="160" height="160"><h3>Mahi Patel</h3><p class="role">Secretary · Chief Marketing Officer</p><p>Leads outreach, communication, and community connections that help STEMSeeds reach learners.</p></article>
+          <article class="team-card"><img src="images/3.jpeg" alt="Dviti Soni" loading="lazy" decoding="async" width="160" height="160"><h3>Dviti Soni</h3><p class="role">Treasurer · Chief Financial Officer</p><p>Supports thoughtful planning and operations so learning opportunities can continue to grow.</p></article>
         </div>
       </div>
     </section>
