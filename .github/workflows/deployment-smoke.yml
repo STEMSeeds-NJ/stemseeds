@@ -1,0 +1,26 @@
+name: Deployment smoke test
+
+on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  smoke-test:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deployed resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://stemseeds.org"
+          for path in / /forms.html /robots.txt /sitemap.xml /site.webmanifest /favicon.svg /web-app-manifest-192x192.png /web-app-manifest-512x512.png; do
+            curl --fail --silent --show-error --location --retry 3 --retry-delay 5 "$base$path" -o /dev/null
+          done
+          status="$(curl --silent --show-error --location --retry 3 --retry-delay 5 -o /tmp/stemseeds-404.html -w '%{http_code}' "$base/404.html")"
+          test "$status" = "404"
+          grep -q "couldn't find that page" /tmp/stemseeds-404.html

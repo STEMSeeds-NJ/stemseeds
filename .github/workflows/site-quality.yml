@@ -1,0 +1,62 @@
+name: Site quality
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run PowerShell validation
+        shell: pwsh
+        run: ./scripts/validate-site.ps1
+      - name: Run Node site checks
+        run: node scripts/check-site.mjs
+      - name: Validate HTML
+        run: npx --yes html-validate@8 index.html forms.html 404.html
+      - name: Check image budgets
+        shell: bash
+        run: |
+          test "$(stat -c%s favicon.svg)" -le 10000
+          test "$(stat -c%s logo.png)" -le 250000
+          test "$(stat -c%s images/1.jpg)" -le 100000
+          test "$(stat -c%s images/2.jpeg)" -le 100000
+          test "$(stat -c%s images/3.jpeg)" -le 100000
+
+  accessibility:
+    runs-on: ubuntu-latest
+    needs: static-checks
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Start static server
+        run: npx --yes http-server@14 . -p 8080 > /tmp/stemseeds-server.log 2>&1 &
+      - name: Run accessibility audit
+        run: |
+          npx --yes pa11y@9 http://127.0.0.1:8080/index.html --runner axe --standard WCAG2AA --threshold 20
+          npx --yes pa11y@9 http://127.0.0.1:8080/forms.html --runner axe --standard WCAG2AA --threshold 20
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: static-checks
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Start static server
+        run: npx --yes http-server@14 . -p 8080 > /tmp/stemseeds-server.log 2>&1 &
+      - name: Run Lighthouse regression check
+        run: npx --yes lighthouse@12 http://127.0.0.1:8080/index.html --only-categories=performance,accessibility,best-practices,seo --chrome-flags="--headless --no-sandbox" --output=json --output-path=/tmp/lighthouse.json
