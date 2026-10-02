@@ -1,4 +1,5 @@
 const MARKDOWN = "text/markdown; charset=utf-8";
+const RAW_REPOSITORY = "https://raw.githubusercontent.com/STEMSeeds-NJ/stemseeds/main";
 
 function acceptsMarkdown(request) {
   return request.headers.get("Accept")?.toLowerCase().split(",").some((value) => {
@@ -25,6 +26,15 @@ async function readOriginAsset(path, request, env) {
   return fetch(originUrl);
 }
 
+async function readHtmlPage(path) {
+  const rawUrl = `${RAW_REPOSITORY}${path === "/" ? "/index.html" : path}`;
+  const response = await fetch(rawUrl);
+  if (!response.ok) return response;
+  const headers = new Headers(response.headers);
+  headers.set("Content-Type", "text/html; charset=utf-8");
+  return new Response(response.body, { status: response.status, headers });
+}
+
 export default {
   async fetch(request, env) {
     if (!env.ORIGIN_URL) throw new Error("ORIGIN_URL must identify the GitHub Pages origin.");
@@ -34,7 +44,13 @@ export default {
     origin.pathname = `${originBasePath}${originUrl.pathname === "/" ? "/" : originUrl.pathname}`;
     origin.search = originUrl.search;
     const originResponse = await fetch(new Request(origin, request));
-    if (!acceptsMarkdown(request)) return withNegotiationHeaders(originResponse);
+    const isHtmlPage = originUrl.pathname === "/" || originUrl.pathname.endsWith(".html");
+    if (!acceptsMarkdown(request)) {
+      if (isHtmlPage && originResponse.status >= 300 && originResponse.status < 400) {
+        return withNegotiationHeaders(await readHtmlPage(originUrl.pathname), "text/html; charset=utf-8");
+      }
+      return withNegotiationHeaders(originResponse);
+    }
 
     if (originUrl.pathname === "/" || originUrl.pathname === "/index.html") {
       return new Response(await readOriginAsset("/index.md", request, env).then((response) => response.text()), {
