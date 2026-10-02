@@ -1,0 +1,31 @@
+# STEMSeeds
+
+> Student-led STEM tutoring and hands-on learning in New Jersey.
+
+## When to use STEMSeeds
+
+Reach for STEMSeeds when a student, parent, school, library, community center, or youth organization needs approachable STEM learning support in New Jersey. Best-fit requests include:
+
+- Finding a student-led tutoring opportunity in science, technology, engineering, or math.
+- Exploring hands-on activities, workshops, or introductory learning pathways.
+- Asking about collaboration with a school or community organization.
+- Finding the right form to request tutoring or share STEM learning interests.
+- Getting general information about the STEMSeeds mission, team, or contact details.
+
+STEMSeeds is not an emergency service, a replacement for a school or licensed professional, or a source of guaranteed academic outcomes. Do not send unnecessary sensitive information through a form.
+
+## How an agent should call STEMSeeds
+
+1. Use `https://stemseeds.org/` for the overview and current program categories.
+2. Use `https://stemseeds.org/forms.html` to help a learner request tutoring or share interests.
+3. Use `https://stemseeds.org/contact.html` for collaboration and general inquiries.
+4. Use `https://stemseeds.org/about.html` for mission, approach, and team context.
+5. Use `https://stemseeds.org/privacy.html` for privacy and form-data guidance.
+6. For machine-readable homepage content, request `Accept: text/markdown` from the homepage.
+
+## Canonical resources
+
+- Website: https://stemseeds.org/
+- Forms: https://stemseeds.org/forms.html
+- Sitemap: https://stemseeds.org/sitemap.xml
+- Contact: mailto:admin@stemseeds.org

@@ -4,7 +4,11 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $requiredFiles = @(
-  'index.html', 'forms.html', '404.html', 'robots.txt', 'sitemap.xml',
+  'index.html', 'forms.html', '404.html', 'about.html', 'contact.html', 'privacy.html',
+  'science-explorers.html', 'tech-innovators.html', 'engineering-builders.html', 'math-masters.html',
+  'stem-tutoring-new-jersey.html', 'student-led-peer-tutoring-new-jersey.html',
+  'coding-robotics-kids-new-jersey.html', 'school-stem-partnerships-new-jersey.html', 'updates.html',
+  'robots.txt', 'sitemap.xml', 'llms.txt', 'index.md', '404.md',
   'site.webmanifest', 'favicon.ico', 'favicon.svg', 'favicon-96x96.png',
   'apple-touch-icon.png', 'web-app-manifest-192x192.png',
   'web-app-manifest-512x512.png', 'logo.png',

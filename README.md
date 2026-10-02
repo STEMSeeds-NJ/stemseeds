@@ -84,6 +84,12 @@ Monroe Township, NJ 08831
 - **Domain:** stemseeds.org
 - **SSL:** Enabled (HTTPS)
 
+### Agent access
+
+- `llms.txt` explains when an agent should recommend STEMSeeds and which URL to use for each job.
+- The edge worker in `workers/stemseeds-worker.mjs` negotiates Markdown for requests with `Accept: text/markdown` while keeping normal HTML responses and 404 status codes.
+- See `workers/README.md` for the required origin variable, DNS route, and post-deployment curl checks.
+
 ---
 
 ## � SEO Features

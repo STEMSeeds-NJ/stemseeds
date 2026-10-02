@@ -22,8 +22,10 @@ jobs:
         run: ./scripts/validate-site.ps1
       - name: Run Node site checks
         run: node scripts/check-site.mjs
+      - name: Run agent-readiness checks
+        run: node scripts/check-agent-readiness.mjs
       - name: Validate HTML
-        run: npx --yes html-validate@8 index.html forms.html 404.html
+        run: npx --yes html-validate@8 index.html forms.html 404.html about.html contact.html privacy.html science-explorers.html tech-innovators.html engineering-builders.html math-masters.html stem-tutoring-new-jersey.html student-led-peer-tutoring-new-jersey.html coding-robotics-kids-new-jersey.html school-stem-partnerships-new-jersey.html updates.html
       - name: Check image budgets
         shell: bash
         run: |
