@@ -1,0 +1,12 @@
+name = "stemseeds-agent-edge"
+main = "stemseeds-worker.mjs"
+compatibility_date = "2026-10-01"
+
+# Set this in the Cloudflare dashboard or with `wrangler secret/var` to the
+# GitHub Pages origin. The repository Pages URL is:
+# https://stemseeds-nj.github.io/stemseeds/
+[vars]
+ORIGIN_URL = "https://stemseeds-nj.github.io/stemseeds/"
+
+# Add the custom-domain route in Cloudflare after deployment:
+# routes = [{ pattern = "stemseeds.org/*", zone_name = "stemseeds.org" }]

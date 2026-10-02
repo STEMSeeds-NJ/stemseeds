@@ -18,9 +18,17 @@ jobs:
         run: |
           set -euo pipefail
           base="https://stemseeds.org"
-          for path in / /forms.html /robots.txt /sitemap.xml /site.webmanifest /favicon.svg /web-app-manifest-192x192.png /web-app-manifest-512x512.png; do
+          for path in / /forms.html /about.html /contact.html /privacy.html /science-explorers.html /tech-innovators.html /engineering-builders.html /math-masters.html /stem-tutoring-new-jersey.html /student-led-peer-tutoring-new-jersey.html /coding-robotics-kids-new-jersey.html /school-stem-partnerships-new-jersey.html /updates.html /robots.txt /sitemap.xml /llms.txt /site.webmanifest /favicon.svg /web-app-manifest-192x192.png /web-app-manifest-512x512.png; do
             curl --fail --silent --show-error --location --retry 3 --retry-delay 5 "$base$path" -o /dev/null
           done
           status="$(curl --silent --show-error --location --retry 3 --retry-delay 5 -o /tmp/stemseeds-404.html -w '%{http_code}' "$base/404.html")"
           test "$status" = "404"
           grep -q "couldn't find that page" /tmp/stemseeds-404.html
+          markdown_headers="$(curl --silent --show-error --location --retry 3 --retry-delay 5 -H 'Accept: text/markdown' -D - "$base/" -o /tmp/stemseeds-home.md)"
+          echo "$markdown_headers" | grep -iq '^content-type: text/markdown'
+          echo "$markdown_headers" | grep -iq '^vary:.*accept'
+          test -s /tmp/stemseeds-home.md
+          markdown_404_status="$(curl --silent --show-error --location --retry 3 --retry-delay 5 -H 'Accept: text/markdown' -D /tmp/stemseeds-404-markdown.headers -o /tmp/stemseeds-404.md -w '%{http_code}' "$base/__ora-404-probe-agent")"
+          test "$markdown_404_status" = "404"
+          grep -iq '^content-type: text/markdown' /tmp/stemseeds-404-markdown.headers
+          test "$(wc -c < /tmp/stemseeds-404.md)" -ge 20

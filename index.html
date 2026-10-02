@@ -44,7 +44,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["EducationalOrganization", "NGO"],
         "@id": "https://stemseeds.org/#organization",
         "name": "STEMSeeds",
         "alternateName": "STEM Seeds",
@@ -52,7 +52,19 @@
         "logo": "https://stemseeds.org/logo.png",
         "image": "https://stemseeds.org/logo.png",
         "description": "A student-led STEM education initiative in New Jersey focused on approachable, hands-on learning.",
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "New Jersey"
+        },
         "email": "admin@stemseeds.org",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "14 Liberty Way",
+          "addressLocality": "Monroe Township",
+          "addressRegion": "NJ",
+          "postalCode": "08831",
+          "addressCountry": "US"
+        },
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "general inquiries",
@@ -64,6 +76,42 @@
           "https://linkedin.com/company/stemseedsnj",
           "https://github.com/STEMSeeds-NJ/stemseeds"
         ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://stemseeds.org/#science-explorers",
+        "name": "Science Explorers",
+        "serviceType": "Hands-on science learning",
+        "provider": { "@id": "https://stemseeds.org/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "New Jersey" },
+        "description": "Hands-on experiments, scientific thinking, observation, and discovery that bring science to life."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://stemseeds.org/#tech-innovators",
+        "name": "Tech Innovators",
+        "serviceType": "Technology learning",
+        "provider": { "@id": "https://stemseeds.org/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "New Jersey" },
+        "description": "Introductory coding, robotics, computational thinking, and digital skills for curious learners."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://stemseeds.org/#engineering-builders",
+        "name": "Engineering Builders",
+        "serviceType": "Engineering learning",
+        "provider": { "@id": "https://stemseeds.org/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "New Jersey" },
+        "description": "Design challenges, building activities, engineering thinking, and problem solving through practical exploration."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://stemseeds.org/#math-masters",
+        "name": "Math Masters",
+        "serviceType": "Mathematics learning",
+        "provider": { "@id": "https://stemseeds.org/#organization" },
+        "areaServed": { "@type": "AdministrativeArea", "name": "New Jersey" },
+        "description": "Mathematical reasoning, problem solving, foundational concepts, and interactive practice."
       },
       {
         "@type": "WebSite",
@@ -150,6 +198,8 @@
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
         <a href="forms.html">Forms</a>
+        <a href="about.html">About page</a>
+        <a href="updates.html">Updates</a>
       </nav>
       <button class="mobile-menu-btn mobile-menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-navigation">
         <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
@@ -162,6 +212,8 @@
       <a href="#team">Team</a>
       <a href="#contact">Contact</a>
       <a href="forms.html">Forms</a>
+      <a href="about.html">About page</a>
+      <a href="updates.html">Updates</a>
     </nav>
   </header>
 
@@ -238,10 +290,10 @@
           <p>Four STEM categories to spark curiosity and build foundations.</p>
         </div>
         <div class="programs-grid">
-          <article class="program-card"><div class="icon" aria-hidden="true">🧪</div><h3>Science Explorers</h3><p>Hands-on experiments, scientific thinking, observation, and discovery that bring science to life.</p><a class="button button-primary" href="forms.html">Explore Science Learning</a></article>
-          <article class="program-card"><div class="icon" aria-hidden="true">💻</div><h3>Tech Innovators</h3><p>Introductory coding, robotics, computational thinking, and digital skills for curious learners.</p><a class="button button-primary" href="forms.html">Explore Technology Learning</a></article>
-          <article class="program-card"><div class="icon" aria-hidden="true">🏗️</div><h3>Engineering Builders</h3><p>Design challenges, building activities, engineering thinking, and problem solving through practical exploration.</p><a class="button button-primary" href="forms.html">Explore Engineering Learning</a></article>
-          <article class="program-card"><div class="icon" aria-hidden="true">📊</div><h3>Math Masters</h3><p>Mathematical reasoning, problem solving, foundational concepts, and interactive practice.</p><a class="button button-primary" href="forms.html">Explore Math Learning</a></article>
+          <article class="program-card"><div class="icon" aria-hidden="true">🧪</div><h3>Science Explorers</h3><p>Hands-on experiments, scientific thinking, observation, and discovery that bring science to life.</p><a class="button button-primary" href="science-explorers.html">Explore Science Learning</a></article>
+          <article class="program-card"><div class="icon" aria-hidden="true">💻</div><h3>Tech Innovators</h3><p>Introductory coding, robotics, computational thinking, and digital skills for curious learners.</p><a class="button button-primary" href="tech-innovators.html">Explore Technology Learning</a></article>
+          <article class="program-card"><div class="icon" aria-hidden="true">🏗️</div><h3>Engineering Builders</h3><p>Design challenges, building activities, engineering thinking, and problem solving through practical exploration.</p><a class="button button-primary" href="engineering-builders.html">Explore Engineering Learning</a></article>
+          <article class="program-card"><div class="icon" aria-hidden="true">📊</div><h3>Math Masters</h3><p>Mathematical reasoning, problem solving, foundational concepts, and interactive practice.</p><a class="button button-primary" href="math-masters.html">Explore Math Learning</a></article>
         </div>
       </div>
     </section>
@@ -311,7 +363,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div><h2>STEMSeeds</h2><p>Planting the seeds for the future through approachable STEM education.</p></div>
-      <div><h3>Explore</h3><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#programs">Programs</a><a href="#how-it-works">How It Works</a><a href="#partners">Partners</a><a href="forms.html">Forms</a><a href="#contact">Contact</a></nav></div>
+      <div><h3>Explore</h3><nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="about.html">About page</a><a href="#programs">Programs</a><a href="#how-it-works">How It Works</a><a href="#partners">Partners</a><a href="forms.html">Forms</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="updates.html">Updates</a><a href="#contact">Social updates</a></nav></div>
       <div><h3>Connect</h3><div class="footer-links"><a href="mailto:admin@stemseeds.org">admin@stemseeds.org</a><a class="social-icon" href="https://github.com/STEMSeeds-NJ/stemseeds" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.5 1.1 1.5 1.1.9 1.5 2.3 1.1 2.9.8.1-.7.4-1.1.6-1.3-2.2-.3-4.5-1.1-4.5-5A3.9 3.9 0 0 1 6.7 7c-.1-.3-.5-1.3.1-2.7 0 0 .8-.3 2.8 1.1a9.6 9.6 0 0 1 5 0c2-1.4 2.8-1.1 2.8-1.1.6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1.1 2.8c0 4-2.3 4.7-4.5 5 .4.3.7 1 .7 2v1.5c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg><span class="visually-hidden">GitHub</span></a><a class="social-icon" href="https://www.instagram.com/stemseeds.nj" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Z"/></svg><span class="visually-hidden">Instagram</span></a><a class="social-icon" href="https://www.tiktok.com/@stemseeds.nj" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 2h3a5.5 5.5 0 0 0 2.5 3v3.1a8.5 8.5 0 0 1-5.5-2.3v8.1a6.1 6.1 0 1 1-5.3-6v3.2a2.9 2.9 0 1 0 2.1 2.8V2h3.2Z"/></svg><span class="visually-hidden">TikTok</span></a><a class="social-icon" href="https://www.linkedin.com/company/stemseedsnj" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 3A1.5 1.5 0 1 1 3 4.5 1.5 1.5 0 0 1 4.5 3ZM3.3 8h2.4v12H3.3V8Zm4.2 0h2.3v1.6h.1A4.1 4.1 0 0 1 13.6 8c2.5 0 4.1 1.6 4.1 4.8V20h-2.4v-6.4c0-1.5-.6-2.6-2-2.6-1.5 0-2.2 1-2.2 2.7V20H7.5V8Z"/></svg><span class="visually-hidden">LinkedIn</span></a></div></div>
     </div>
     <div class="container footer-bottom"><p>&copy; 2026 STEMSeeds. All rights reserved.</p></div>
